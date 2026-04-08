@@ -18,7 +18,7 @@ HOST = "localhost"
 PORT = 8000
 HTTP_PORT = 8001
 
-# 🎛️ SYSTEM STATE
+# SYSTEM STATE
 state = {
     "bpm": 130,
     "artist": "travis",
@@ -38,7 +38,7 @@ state_lock = threading.Lock()
 client_conn = None
 
 # =========================================================
-# 🧬 ARTIST BEAT DNA 
+#  ARTIST BEAT DNA 
 # =========================================================
 KICK_DNA = {
     "travis": {0: 1.0, 3: 0.7, 8: 0.2, 10: 0.6, 11: 0.4},
@@ -75,7 +75,7 @@ CHORD_PHRASES = {
 }
 
 # =========================================================
-# 🌐 HTTP CONTROL SERVER
+# HTTP CONTROL SERVER
 # =========================================================
 class ControlHandler(BaseHTTPRequestHandler):
     def do_POST(self):
@@ -104,7 +104,7 @@ def start_http():
     server.serve_forever()
 
 # =========================================================
-# 🎹 THE DRIFT-FREE MUSIC ENGINE
+# THE DRIFT-FREE MUSIC ENGINE
 # =========================================================
 def music_engine():
     global client_conn
@@ -138,7 +138,7 @@ def music_engine():
 
         sixteenth = (60.0 / bpm) / 4.0
         
-        # Travis has a rigid bounce, Don is incredibly laid-back and late
+        #  rigid bounce v/s laid-back 
         swing_amount = 0.15 if artist == "travis" else 0.25
         swing_delay = sixteenth * swing_amount if step % 2 == 1 else 0.0
 
@@ -186,7 +186,7 @@ def music_engine():
                         send("HAT_ON|80")
                     threading.Thread(target=hat_roll, args=(sixteenth / 2.0,)).start()
 
-        # ── ⏱ DRIFT-FREE CLOCK ──
+        # ──  DRIFT-FREE CLOCK ──
         step_duration = sixteenth + swing_delay
         next_step_time += step_duration
         
