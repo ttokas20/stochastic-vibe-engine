@@ -1,6 +1,6 @@
 """
 ╔══════════════════════════════════════════════════════════════════╗
-║           LIVE VIBE ENGINE — MIDI CLIENT v2                     ║
+║           LIVE STOCHASTIC ENGINE — MIDI CLIENT v2                     ║
 ║   Connects to brains.py on localhost:8000                       ║
 ║   Translates IPC command strings → MIDI output                  ║
 ╚══════════════════════════════════════════════════════════════════╝
